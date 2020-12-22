@@ -2,18 +2,17 @@
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
-    "jsx": "react",
     "target": "es2019",
+    "outDir": "dist",
+    "declaration": true,
     "sourceMap": true,
-    "outDir": "./dist",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "strict": true,
-    "incremental": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "strict": true
   },
   "include": ["src", "test"],
   "exclude": ["node_modules", "dist"]

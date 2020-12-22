@@ -3,19 +3,20 @@
   "version": "0.0.1",
   "description": "",
   "license": "MIT",
+  "files": [
+    "*.d.ts",
+    "*.js",
+    "*.js.map"
+  ],
   "engines": {
     "node": ">=12"
   },
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "build": "rimraf dist && tsc -p .",
     "lint": "eslint --ext .ts,.tsx --fix --max-warnings 0 .",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
+    "test": "jest --passWithNoTests",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "type-check": "tsc -p tsconfig.check.json"
+    "type-check": "tsc -p . --noEmit"
   },
   "peerDependencies": {
     "@nestjs/common": "^7.0.0",
@@ -26,7 +27,6 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/prompt-cli": "^11.0.0",
-    "@nestjs/cli": "^7.5.4",
     "@nestjs/common": "^7.6.4",
     "@nestjs/core": "^7.6.4",
     "@nestjs/schematics": "^7.2.5",
